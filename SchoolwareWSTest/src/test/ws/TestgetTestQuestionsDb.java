@@ -1,4 +1,5 @@
 package test.ws;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -6,16 +7,13 @@ import java.util.HashSet;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
 import src.ws.DBManager;
 import src.ws.UQuestionsCollection;
-
 import com.google.gson.Gson;
-
-
 import org.junit.Test;
 
-public class Test1 {
+
+public class TestgetTestQuestionsDb {
 
 	@Test
 	public void test() {
@@ -27,7 +25,7 @@ public class Test1 {
         String rawJson = driver.getPageSource();
         
         Gson gson = new Gson();
-
+        System.out.println(rawJson);
         UQuestionsCollection uquestion = gson.fromJson(rawJson, UQuestionsCollection.class);
         
         
@@ -73,11 +71,6 @@ public class Test1 {
         	System.out.println("Exception:" + e);
         }
         
-                
-        
-        
 	}
 
-	}
-
-
+}
